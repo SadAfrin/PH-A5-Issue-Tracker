@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Tracker</title>
+
+    <!-- tailwind -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- geist font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <!-- icons- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- font style -->
+    <style>
+        * {
+            font-family: 'Geist', sans-serif;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 w-full max-w-md">
+        
+        <div class="text-center mb-8">
+            <div class="flex justify-center mb-4">
+                <img src="assets/github-logo.png" alt="github logo">
+            </div>
+            <h1 class="text-2xl font-bold text-gray-800">GitHub Issues Tracker</h1>
+            <p class="text-gray-500 text-sm">Sign in to manage your issues</p>
+        </div>
+
+        <form id="loginForm" class="space-y-4"> <!-- js id given -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">Username</label>
+                <input type="text" id="username" placeholder="Enter Username" required
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-all">   <!-- js id given -->
+                <p class="text-[11px] text-[#4A00FF] mt-1 font-medium">Default: admin</p>
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">Password</label>
+                <input type="password" id="password" placeholder="Enter Password" required
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-all">
+                <p class="text-[11px] text-[#4A00FF] mt-1 font-medium">Default: admin123</p>
+            </div>
+
+            <button type="submit" 
+                class="w-full bg-[#4A00FF] text-white font-bold py-3 my-4 rounded-xl hover:opacity-85 transition-all cursor-pointer">
+                Sign In
+            </button>
+        </form>
+
+        <div class="text-center text-gray-400 my-6 tracking-widest text-xs">
+    ---------------------- <span class="text-black opacity-70 font-bold text-[16px]">OR</span> ----------------------
+</div>
+
+        <div class="text-center">
+            <p class="text-xs text-gray-400 mb-4">Demo Credentials:</p>
+            <p class="text-sm text-gray-700"><strong>Username:</strong> admin</p>
+            <p class="text-sm text-gray-700"><strong>Password:</strong> admin123</p>
+        </div>
+    </div>
+
+    <script src="scripts/login.js"></script>  <!--login.js file link kora holo -->
+</body>
+</html>
