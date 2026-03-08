@@ -7,6 +7,10 @@ const closedBtn = document.getElementById("closed-btn");
 
 const buttons = [allBtn, openBtn, closedBtn];
 function setActiveButton(activeBtn) {
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.value = ""; 
+    }
     buttons.forEach(btn => {
         btn.classList.remove("bg-[#4A00FF]", "text-white");
         btn.classList.add("bg-white", "text-gray-500", "border", "border-gray-100");
