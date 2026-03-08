@@ -9,11 +9,15 @@ const buttons = [allBtn, openBtn, closedBtn];
 function setActiveButton(activeBtn) {
     buttons.forEach(btn => {
         btn.classList.remove("bg-[#4A00FF]", "text-white");
-        btn.classList.add("bg-white", "text-gray-500");
+        btn.classList.add("bg-white", "text-gray-500", "border", "border-gray-100");
     });
 
-    activeBtn.classList.remove("bg-white", "text-gray-500");
+    activeBtn.classList.remove("bg-white", "text-gray-500", "border", "border-gray-100");
     activeBtn.classList.add("bg-[#4A00FF]", "text-white");
+
+    if (activeBtn === allBtn) {
+        activeBtn.classList.add("border-gray-100");
+    }
 }
 
 allBtn.addEventListener("click", () => {
@@ -22,8 +26,16 @@ allBtn.addEventListener("click", () => {
     setActiveButton(allBtn);
 });
 
-let allFetchedIssues = [];
+const showLoading = () => {
+    issuesWrapper.innerHTML = `
+        <div class="col-span-full flex flex-col items-center justify-center py-20">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-[#4A00FF]"></div>
+            <p class="mt-4 text-gray-500 font-medium">Loading issues...</p>
+        </div>
+    `;
+};
 
+let allFetchedIssues = [];
 // API theke data fetching
 const loadIssues = async () => {
     const response = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
@@ -34,6 +46,7 @@ const loadIssues = async () => {
 
 
 async function getAllIssues() {
+    showLoading();
     const issuesList = await loadIssues();
     totalCountEl.innerText = issuesList.length;
     setActiveButton(allBtn);
