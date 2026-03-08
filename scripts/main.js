@@ -1,11 +1,14 @@
 const issuesWrapper = document.getElementById('issuesWrapper');
 const totalCountEl = document.getElementById('totalCount');
 
+let allFetchedIssues = [];
+
 // API theke data fetching
 const loadIssues = async () => {
     const response = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     const json = await response.json();
-    return json.data; 
+    allFetchedIssues = json.data; 
+    return allFetchedIssues;
 };
 
 async function getAllIssues() {
@@ -28,7 +31,7 @@ function displayIssues(issues) {
 
     issues.forEach(issue => {
         const isOpen = issue.status === 'open';
-        // 1. tatus-based theme
+        // 1. status-based theme
         const theme = {
             // top border color
             cardBorder: isOpen ? 'border-t-green-500' : 'border-t-purple-500', 
@@ -117,5 +120,9 @@ function displayIssues(issues) {
         issuesWrapper.innerHTML += card;
     });
 }
+
+document.getElementById('all-btn')?.addEventListener('click', () => {
+    displayIssues(allFetchedIssues);
+});
 
 getAllIssues();
