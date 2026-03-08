@@ -1,6 +1,27 @@
 const issuesWrapper = document.getElementById('issuesWrapper');
 const totalCountEl = document.getElementById('totalCount');
 
+const allBtn = document.getElementById("all-btn");
+const openBtn = document.getElementById("open-btn");
+const closedBtn = document.getElementById("closed-btn");
+
+const buttons = [allBtn, openBtn, closedBtn];
+function setActiveButton(activeBtn) {
+    buttons.forEach(btn => {
+        btn.classList.remove("bg-[#4A00FF]", "text-white");
+        btn.classList.add("bg-white", "text-gray-500");
+    });
+
+    activeBtn.classList.remove("bg-white", "text-gray-500");
+    activeBtn.classList.add("bg-[#4A00FF]", "text-white");
+}
+
+allBtn.addEventListener("click", () => {
+    displayIssues(allFetchedIssues);
+    totalCountEl.innerText = allFetchedIssues.length;
+    setActiveButton(allBtn);
+});
+
 let allFetchedIssues = [];
 
 // API theke data fetching
@@ -11,11 +32,11 @@ const loadIssues = async () => {
     return allFetchedIssues;
 };
 
+
 async function getAllIssues() {
     const issuesList = await loadIssues();
-
     totalCountEl.innerText = issuesList.length;
-
+    setActiveButton(allBtn);
     displayIssues(issuesList);
 }
 
@@ -121,8 +142,6 @@ function displayIssues(issues) {
     });
 }
 
-document.getElementById('all-btn')?.addEventListener('click', () => {
-    displayIssues(allFetchedIssues);
-});
+
 
 getAllIssues();
