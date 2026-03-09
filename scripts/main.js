@@ -159,6 +159,4 @@ function displayIssues(issues) {
     });
 }
 
-
-
 getAllIssues();

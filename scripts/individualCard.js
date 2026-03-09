@@ -7,9 +7,7 @@ function showIssueDetails(id) {
     modal.classList.remove("hidden");
     modal.classList.add("flex");
 
-    
-
-    const getLabelStyle = (label) => {
+    const getLabelStyle = (label) => { //main.js theke copy kore anchi
 
         const l = label ? label.toLowerCase() : '';
 
