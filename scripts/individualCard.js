@@ -7,6 +7,30 @@ function showIssueDetails(id) {
     modal.classList.remove("hidden");
     modal.classList.add("flex");
 
+    
+
+    const getLabelStyle = (label) => {
+
+        const l = label ? label.toLowerCase() : '';
+
+        if (l === 'bug') {
+            return 'bg-red-100 text-red-600';
+        } 
+        else if (l === 'enhancement') {
+            return 'bg-green-100 text-green-600';
+        } 
+        else if (l === 'help wanted') {
+            return 'bg-orange-100 text-orange-600';
+        } 
+        else if (l === 'good first issue') {
+            return 'bg-indigo-100 text-indigo-600';
+        } 
+        else {
+            return 'bg-gray-100 text-gray-600';
+        }
+
+    };
+
     modalContainer.innerHTML = "<p class='text-center py-10'>Loading issue...</p>";
 
     fetch("https://phi-lab-server.vercel.app/api/v1/lab/issue/" + id)
@@ -32,7 +56,7 @@ function showIssueDetails(id) {
 
                 <div class="flex flex-wrap gap-2 mb-6">
                     ${issue.labels.map(label => `
-                        <span class="bg-orange-50 text-orange-500 border border-orange-200 px-3 py-1 rounded-full text-[11px] font-semibold uppercase flex items-center gap-1">
+                        <span class="${getLabelStyle(label)} border px-3 py-1 rounded-full text-[11px] font-semibold uppercase flex items-center gap-1">
                             <i class="fa-solid fa-tag text-[9px]"></i> ${label}
                         </span>
                     `).join('')}
@@ -42,7 +66,7 @@ function showIssueDetails(id) {
                     ${issue.description}
                 </p>
 
-                <div class="flex justify-start gap-32 px-6 items-center">
+                <div class="flex justify-start gap-10 md:gap-32 px-6 items-center">
                     <div>
                         <p class="text-gray-400 text-xs font-semibold mb-2">Assignee:</p>
                         <p class="text-gray-900 text-[14px] font-bold">${issue.author}</p>
