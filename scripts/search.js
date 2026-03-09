@@ -48,3 +48,6 @@ searchInput.addEventListener('input', async (e) => {
         totalCountEl.innerText = finalData.length;
     });
 });
+
+
+

@@ -123,7 +123,7 @@ function displayIssues(issues) {
         // const labelStyle = getLabelStyle(issue.labels);
 
         const card = `
-            <div class="bg-white border border-gray-100 border-t-4 ${theme.cardBorder} rounded-xl shadow-sm hover:shadow-md transition-all h-full flex flex-col justify-between overflow-hidden">
+            <div onclick="showIssueDetails(${issue.id})" class="bg-white border border-gray-100 border-t-4 ${theme.cardBorder} rounded-xl shadow-sm hover:shadow-md transition-all h-full flex flex-col justify-between overflow-hidden">
                 <div class="p-5 flex-grow border-b border-gray-200">
                     <div class="flex justify-between items-center mb-4">
                          ${theme.statusIcon}
