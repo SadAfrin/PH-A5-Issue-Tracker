@@ -1,14 +1,76 @@
-1️⃣ What is the difference between var, let, and const?
-    Answer: The main difference is- declaring a variable with var and let, one can change the value of that variable, and on the other hand a variable with const one can not modify or change the value of that variable once it is declared. And the difference between var and let is- if you use a variable and later you declared that with var you will not get any error though you are using the variable first then declaring it; but regarding using let you have to declare the variable with let before using it, otherwise you will get an error.
+# 🐞 GitHub Issues Tracker
 
-2️⃣ What is the spread operator (...)?
-    Answer: It basically allows to an array or any object to expand the values into individual item. Like if you use '...arr' in a loop now every time you can get one item from first to last while iterating.
+**GitHub Issues Tracker** is a responsive web application that allows users to manage and explore issues through categorized tabs, search functionality, and detailed modal views. Users can sign in using demo admin credentials and browse issues based on their status.
 
-3️⃣ What is the difference between map(), filter(), and forEach()?
-    Answer: map() transforms the elements into a new array, filter() returns a new array with those elements, which fulfill the given condition, forEach() executes code for each element with no returns (means- returns undefined).
+<img width="1847" height="822" alt="Screenshot 2026-05-15 132130" src="https://github.com/user-attachments/assets/2ce66075-94c5-46b4-848f-1fe3b46f2857" />
 
-4️⃣ What is an arrow function?
-    Answer: An arrow function is a short syntax for writing functions using =>; here, no function keyword is needed. Single-expression functions return the value implicitly. For example, const add = (a,b) => a + b;--- here the add function simply just returns the value of a+b and add function is written without the function keyword.
 
-5️⃣ What are template literals?
-    Answer: Template literals are string syntax using backticks `; it allows variable interpolation with ${} and multi-line strings.
+### 🌐 [Live URL](https://sadafrin.github.io/PH-A5-Issue-Tracker/)
+
+---
+
+## 🚀 Key Features
+
+### 1. 🔐 Login Authentication
+- Login page with logo, title, subtitle, and demo credentials.
+- Users can sign in using predefined admin credentials.
+
+<img width="653" height="875" alt="image" src="https://github.com/user-attachments/assets/77518750-f4d3-4c05-b8ae-b0f4bbdbc610" />
+
+
+---
+
+### 2. 📋 Issue Management Tabs
+- Display all issues using categorized tabs: All, Open, and Closed.
+- Active tab highlighting and dynamic issue filtering.
+  
+
+---
+
+### 3. 🃏 Dynamic Issue Cards
+- Each issue card displays:
+  - Title
+  - Description
+  - Status
+  - Author
+  - Priority
+  - Label
+  - Created Date
+- Open issues show a green top border and closed issues show a purple top border.
+
+
+---
+
+### 4. 🔍 Search Functionality
+- Search issues dynamically using keywords.
+- Responsive search bar integrated into the navbar.
+
+---
+
+### 5. 📑 Detailed Modal View
+- Clicking an issue card opens a modal displaying complete issue information.
+
+---
+
+## 🛠️ Technologies Used
+- HTML
+- Tailwind CSS / DaisyUI
+- JavaScript (Vanilla)
+
+---
+
+## 💻 Local Setup
+
+```bash
+git clone https://github.com/SadAfrin/PH-A5-Issue-Tracker.git
+```
+
+```bash
+cd PH-A5-Issue-Tracker
+```
+
+```bash
+rm -rf .git
+```
+
+Then simply open the `index.html` file in your browser.
