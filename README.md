@@ -69,8 +69,4 @@ git clone https://github.com/SadAfrin/PH-A5-Issue-Tracker.git
 cd PH-A5-Issue-Tracker
 ```
 
-```bash
-rm -rf .git
-```
-
 Then simply open the `index.html` file in your browser.
