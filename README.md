@@ -54,7 +54,7 @@
 
 ## 🛠️ Technologies Used
 - HTML
-- Tailwind CSS / DaisyUI
+- Tailwind CSS
 - JavaScript (Vanilla)
 
 ---
